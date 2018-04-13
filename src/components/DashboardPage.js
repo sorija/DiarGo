@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const DashboardPage = () => (
   <div>
-    Dashboard page content
+    <Link className="button" to="/create">New post</Link>
   </div>
 );
 

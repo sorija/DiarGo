@@ -5,9 +5,7 @@ import Header from '../components/Header';
 
 export const PrivateRoute = ({
   isAuthenticated,
-  // rename
   component: Component,
-  // grab rest of the props, to make sure they get passed to Route
   ...rest
 }) => (
     <Route {...rest} component={(props) => (
