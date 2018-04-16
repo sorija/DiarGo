@@ -1,11 +1,15 @@
 import React from 'react';
 
 export default class PostForm extends React.Component {
-  state = {
-    title: '',
-    content: '',
-    error: '',
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      title: props.post ? props.post.title : '',
+      content: props.post ? props.post.content : '',
+      error: '',
+    };
+  }
   onTitleChange = (e) => {
     const title = e.target.value;
     this.setState(() => ({ title }));
