@@ -31,4 +31,3 @@ const mapDispatchtoProps = (dispatch) => ({
 });
 
 export default connect(undefined, mapDispatchtoProps)(AddPostPage);
-
