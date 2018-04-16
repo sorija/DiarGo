@@ -72,3 +72,23 @@ test('should add post with defaults to database and store', (done) => {
     done();
   });
 });
+
+test('should setup set post action object with data', () => {
+  const action = setPosts(posts);
+  expect(action).toEqual({
+    type: 'SET_POSTS',
+    posts
+  });
+});
+
+test('should fetch the posts from firebase', (done) => {
+  const store = createMockStore(defaultAuthState);
+  store.dispatch(startSetPosts()).then(() => {
+    const actions = store.getActions();
+    expect(actions[0]).toEqual({
+      type: 'SET_POSTS',
+      posts
+    });
+    done();
+  });
+});
