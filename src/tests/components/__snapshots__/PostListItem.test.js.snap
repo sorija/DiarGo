@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render PostListItem with a post 1`] = `
+<Link
+  replace={false}
+  to="/edit/1"
+>
+  <h2>
+    Test Post Title
+  </h2>
+  <p>
+    Test Post Content
+  </p>
+</Link>
+`;

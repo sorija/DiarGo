@@ -2,6 +2,13 @@
 
 exports[`should render DashboardPage correctly 1`] = `
 <div>
-  Dashboard page content
+  <Link
+    className="button"
+    replace={false}
+    to="/create"
+  >
+    New post
+  </Link>
+  <Connect(PostList) />
 </div>
 `;
