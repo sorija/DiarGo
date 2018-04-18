@@ -8,6 +8,9 @@ exports[`should render PostListItem with a post 1`] = `
   <h2>
     Test Post Title
   </h2>
+  <span>
+    January 1st, 1970, 2:00:00 am
+  </span>
   <p>
     Test Post Content
   </p>

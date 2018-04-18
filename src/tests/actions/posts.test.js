@@ -19,8 +19,8 @@ const createMockStore = configureMockStore([thunk]);
 
 beforeEach((done) => {
   const postsData = {};
-  posts.forEach(({ id, title, content }) => {
-    postsData[id] = { title, content };
+  posts.forEach(({ id, title, content, createdAt }) => {
+    postsData[id] = { title, content, createdAt };
   });
   database.ref(`users/${uid}/posts`).set(postsData).then(() => done());
 });
@@ -37,7 +37,8 @@ test('should add post to database and store', (done) => {
   const store = createMockStore(defaultAuthState);
   const postData = {
     title: 'Relevant topic',
-    content: 'Detailed post'
+    content: 'Detailed post',
+    createdAt: 1000
   };
   store.dispatch(startAddPost(postData)).then(() => {
     const actions = store.getActions();
@@ -59,7 +60,8 @@ test('should add post with defaults to database and store', (done) => {
   const store = createMockStore(defaultAuthState);
   const postDefaults = {
     title: '',
-    content: ''
+    content: '',
+    createdAt: 0
   };
   store.dispatch(startAddPost({})).then(() => {
     const actions = store.getActions();

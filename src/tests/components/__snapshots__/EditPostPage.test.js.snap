@@ -2,14 +2,18 @@
 
 exports[`should render EditPostPage correctly 1`] = `
 <div>
-  <h1>
-    Edit Post
-  </h1>
+  <Link
+    replace={false}
+    to="/read/2"
+  >
+    Readable version
+  </Link>
   <PostForm
     onPostSubmit={[Function]}
     post={
       Object {
         "content": "Different Content",
+        "createdAt": 518400000,
         "id": "2",
         "title": "Other Test Title",
       }

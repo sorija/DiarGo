@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const ReadPostPage = (props) => (
+export const ReadPostPage = (props) => (
   <div>
     <h1>Post Page</h1>
     <h3>{props.post.title}</h3>

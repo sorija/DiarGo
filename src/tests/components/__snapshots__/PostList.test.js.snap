@@ -18,12 +18,14 @@ exports[`should render PostList with posts 1`] = `
   </h1>
   <PostListItem
     content="Test Post Content"
+    createdAt={0}
     id="1"
     key="1"
     title="Test Post Title"
   />
   <PostListItem
     content="Different Content"
+    createdAt={518400000}
     id="2"
     key="2"
     title="Other Test Title"
