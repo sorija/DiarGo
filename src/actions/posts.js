@@ -1,4 +1,5 @@
 import database from '../firebase/firebase';
+import moment from 'moment';
 
 export const addPost = (post) => ({
   type: 'ADD_POST',
@@ -10,10 +11,11 @@ export const startAddPost = (postData = {}) => {
     const uid = getState().auth.uid;
     const {
       title = '',
-      content = ''
+      content = '',
+      createdAt = 0
     } = postData;
     // save data
-    const post = { title, content };
+    const post = { title, content, createdAt };
     return database.ref(`users/${uid}/posts`).push(post).then((ref) => {
       dispatch(addPost({
         id: ref.key,
@@ -22,7 +24,6 @@ export const startAddPost = (postData = {}) => {
     });
   };
 };
-
 
 export const setPosts = (posts) => ({
   type: 'SET_POSTS',
