@@ -6,6 +6,7 @@ import Header from '../components/Header';
 export const PrivateRoute = ({
   isAuthenticated,
   component: Component,
+  // get all the other props that weren't destructured (like 'path' or 'exact')
   ...rest
 }) => (
     <Route {...rest} component={(props) => (
@@ -21,7 +22,7 @@ export const PrivateRoute = ({
   );
 
 const mapStateToProps = (state) => ({
-  isAuthenticated: !!state.auth.uid
+  isAuthenticated: !!state.auth.uid // flip to boolean
 });
 
 export default connect(mapStateToProps)(PrivateRoute);

@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import PostForm from './PostForm';
 import { startEditPost, startRemovePost } from '../actions/posts';
 
@@ -16,7 +17,7 @@ export class EditPostPage extends React.Component {
   render() {
     return (
       <div>
-        <h1>Edit Post</h1>
+        <Link to={`/read/${this.props.post.id}`}>Readable version</Link>
         <PostForm
           post={this.props.post}
           onPostSubmit={this.onSubmit}
