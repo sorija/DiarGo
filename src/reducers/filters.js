@@ -1,5 +1,6 @@
 const filtersReducerDefaults = {
   text: '',
+  date: undefined
 };
 
 const filtersReducer = (state = filtersReducerDefaults, action) => {
@@ -9,6 +10,11 @@ const filtersReducer = (state = filtersReducerDefaults, action) => {
         ...state,
         text: action.text
       };
+    case 'SET_DATE_FILTER':
+    return {
+      ...state,
+      date: action.date
+    };
     default:
       return state
   };

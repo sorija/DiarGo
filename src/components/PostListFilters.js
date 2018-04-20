@@ -1,19 +1,41 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { setTextFilter } from '../actions/filters';
+import { SingleDatePicker } from 'react-dates';
+import { setTextFilter, setDateFilter } from '../actions/filters';
 
 export class PostListFilters extends React.Component {
+  state = {
+    calendarFocused: false
+  };
   onTextChange = (e) => {
     this.props.setTextFilter(e.target.value);
+  };
+  onDateChange = (createdAt) => {
+    this.setState(() => ({ createdAt }));
+    this.props.setDateFilter(createdAt);
+  };
+  onFocusChange = ({ focused }) => {
+    this.setState(() => ({ calendarFocused: focused }));
   };
   render() {
     return (
       <div>
         <input
           type="text"
-          placeholder="Search by title"
+          placeholder="Search title"
           value={this.props.filters.text}
           onChange={this.onTextChange}
+        />
+        <SingleDatePicker
+          date={this.props.filters.date}
+          onDateChange={this.onDateChange}
+          focused={this.state.calendarFocused}
+          onFocusChange={this.onFocusChange}
+          placeholder={'Search date'}
+          numberOfMonths={1}
+          showClearDate={true}
+          showDefaultInputIcon={true}
+          isOutsideRange={() => false}
         />
       </div>
     );
@@ -26,6 +48,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   setTextFilter: (text) => dispatch(setTextFilter(text)),
+  setDateFilter: (date) => dispatch(setDateFilter(date))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostListFilters);

@@ -4,6 +4,8 @@ import { Provider } from 'react-redux';
 import AppRouter, { history } from './routers/AppRouter';
 import configureStore from './store/configureStore';
 import { login, logout } from './actions/auth';
+import 'react-dates/initialize';
+import 'react-dates/lib/css/_datepicker.css';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 import { firebase } from './firebase/firebase';

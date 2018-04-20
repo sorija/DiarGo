@@ -1,8 +1,12 @@
-const selectPosts = (posts, { text }) => {
-  return posts.filter((post) => {
-    const textMatch = post.title.toLowerCase().includes(text.toLowerCase());
+import moment from 'moment';
 
-    return textMatch;
+const selectPosts = (posts, { text, date }) => {
+  return posts.filter((post) => {
+    const createdAtMoment = moment(post.createdAt);
+    const textMatch = post.title.toLowerCase().includes(text.toLowerCase());
+    const dateMatch = date ? date.isSame(createdAtMoment, 'day') : true;
+    
+    return textMatch && dateMatch;
   });
 };
 
