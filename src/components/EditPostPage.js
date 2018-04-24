@@ -7,7 +7,7 @@ import { startEditPost, startRemovePost } from '../actions/posts';
 export class EditPostPage extends React.Component {
   onSubmit = (post) => {
     this.props.startEditPost(this.props.post.id, post)
-    this.props.history.push('/');
+    this.props.history.push(`/read/${this.props.post.id}`);
   };
   onRemove = () => {
     this.props.startRemovePost({ id: this.props.post.id });
@@ -17,7 +17,7 @@ export class EditPostPage extends React.Component {
   render() {
     return (
       <div>
-        <Link to={`/read/${this.props.post.id}`}>Readable version</Link>
+        <Link to={`/read/${this.props.post.id}`}>Go back</Link>
         <PostForm
           post={this.props.post}
           onPostSubmit={this.onSubmit}
