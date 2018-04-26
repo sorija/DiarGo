@@ -1,14 +1,25 @@
 .button {
-  background: $blue;
+  background: #2498CB;
   border: none;
   border-radius: 3px;
   color: white;
-  display: inline-block;
+  float: right;
+  font-family: Helvetica, Arial, sans-serif;
   font-size: $font-size-large;
-  font-weight: 300;
-  line-height: 1;
+  font-weight: bold;
   padding: $s-size;
   text-decoration: none;
+  text-align: center;
+  width: 10rem;
+}
+
+.button--new {
+  width: auto;
+}
+
+.button--rem {
+  @extend .button;
+  background: $red;
 }
 
 .button--link {

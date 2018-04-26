@@ -6,9 +6,11 @@ import { Link } from 'react-router-dom';
 export const ReadPostPage = (props) => (
   <div>
     <Header />
-    <h1>{props.post.title}</h1>
-    <p>{props.post.content}</p>
-    <Link className="button" to={`/edit/${props.post.id}`}>Edit</Link>
+    <div className="content-container--card">
+      <h1>{props.post.title}</h1>
+      <p id="content">{props.post.content}</p>
+      <Link className="button" to={`/edit/${props.post.id}`}>Edit</Link>
+    </div>
   </div>
 );
 

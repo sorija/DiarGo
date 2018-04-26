@@ -1,5 +1,16 @@
 .content-container {
   margin: 0 auto;
   padding: 0 $m-size;
-  max-width: 80rem;
+  max-width: 90rem;
+}
+
+.content-container--card {
+  @extend .content-container;
+  box-shadow: $shadow;
+}
+
+#content {
+  font-family: 'Swanky and Moo Moo', sans-serif;
+  font-size: $font-size-xlarge;
+  line-height: 2.1;
 }

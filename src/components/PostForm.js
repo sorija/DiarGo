@@ -35,9 +35,10 @@ export default class PostForm extends React.Component {
   };
   render() {
     return (
-      <form onSubmit={this.onSubmit}>
-        {this.state.error && <p>{this.state.error}</p>}
+      <form className="form" onSubmit={this.onSubmit}>
+        {this.state.error && <p className="form__error">{this.state.error}</p>}
         <input
+          className="text-input title-input"
           type="text"
           placeholder="Title"
           autoFocus
@@ -45,13 +46,14 @@ export default class PostForm extends React.Component {
           onChange={this.onTitleChange} 
           />
         <textarea
+          className="text-input content-input"
           placeholder="Content"
           value={this.state.content}
           onChange={this.onContentChange}
         >
         </textarea>
         <div>
-          <button>Save Post</button>
+          <button className="button">Save</button>
         </div>
       </form>
     );

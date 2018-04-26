@@ -19,24 +19,34 @@ export class PostListFilters extends React.Component {
   };
   render() {
     return (
-      <div>
-        <input
-          type="text"
-          placeholder="Search title"
-          value={this.props.filters.text}
-          onChange={this.onTextChange}
-        />
-        <SingleDatePicker
-          date={this.props.filters.date}
-          onDateChange={this.onDateChange}
-          focused={this.state.calendarFocused}
-          onFocusChange={this.onFocusChange}
-          placeholder={'Search date'}
-          numberOfMonths={1}
-          showClearDate={true}
-          showDefaultInputIcon={true}
-          isOutsideRange={() => false}
-        />
+
+      <div className="page-header">
+      <div className="content-container">
+        <div className="input-group">
+          <div className="input-group__item">
+            <input
+              className="text-input"
+              type="text"
+              placeholder="Search title"
+              value={this.props.filters.text}
+              onChange={this.onTextChange}
+            />
+          </div>
+          <div className="input-group__item">
+            <SingleDatePicker
+              date={this.props.filters.date}
+              onDateChange={this.onDateChange}
+              focused={this.state.calendarFocused}
+              onFocusChange={this.onFocusChange}
+              placeholder={'Search date'}
+              numberOfMonths={1}
+              showClearDate={true}
+              showDefaultInputIcon={true}
+              isOutsideRange={() => false}
+            />
+          </div>
+        </div>
+      </div>
       </div>
     );
   };

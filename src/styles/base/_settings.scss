@@ -1,13 +1,16 @@
 // Colors
 $dark-grey: #333;
 $grey: #666;
-$blue: #1c88bf;
+$blue: #2498CB;
+$off-blue: #407899;
 $dark-blue: #364051;
 $off-white: #f7f7f7;
+$red: #C0242A;
 
 // Font Size
-$font-size-large: 1.8rem;
 $font-size-small: 1.4rem;
+$font-size-large: 1.8rem;
+$font-size-xlarge: 2.6rem;
 
 // Spacing
 $s-size: 1.2rem;
@@ -15,3 +18,6 @@ $m-size: 1.6rem;
 $l-size: 3.2rem;
 $xl-size: 4.8rem;
 $desktop-breakpoint: 45rem;
+
+// Box-shadow
+$shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);

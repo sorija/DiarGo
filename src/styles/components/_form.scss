@@ -1,6 +1,7 @@
 .form {
   display: flex;
   flex-direction: column;
+  
   /* target all direct children */
   >* {
     margin-bottom: $m-size;

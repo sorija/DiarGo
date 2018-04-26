@@ -17,12 +17,18 @@ export class EditPostPage extends React.Component {
   render() {
     return (
       <div>
-        <Link to={`/read/${this.props.post.id}`}>Go back</Link>
-        <PostForm
-          post={this.props.post}
-          onPostSubmit={this.onSubmit}
-        />
-        <button onClick={this.onRemove}>Remove Post</button>
+        <div className="page-header">
+          <div className="content-container">
+            <h1 className="page-header__title">Edit Your Post</h1>
+          </div>
+        </div>
+        <div className="content-container">
+          <PostForm
+            post={this.props.post}
+            onPostSubmit={this.onSubmit}
+          />
+          <button className="button--rem" onClick={this.onRemove}>Remove</button>
+        </div>
       </div>
     );
   };

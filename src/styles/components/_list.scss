@@ -1,9 +1,11 @@
 .list-header {
   background: $off-white;
   border: 1px solid darken($off-white, 7%);
+  border-radius: 3px;
   color: $grey;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 0;
   padding: $s-size $m-size;
 }
 
@@ -25,6 +27,7 @@
   transition: background .3s ease;
   &:hover {
     background: $off-white;
+    box-shadow: $shadow;
   }
   @media (min-width: $desktop-breakpoint) {
     align-items: center;
@@ -45,19 +48,16 @@
 }
 
 .list-item__title {
+  color: $dark-blue;
   margin: 0;
-  word-break: break-all;
-}
-
-.list-item__sub-title {
-  color: $grey;
-  font-size: $font-size-small;
-}
-
-.list-item__data {
-  margin: $s-size 0 0 0;
   @media (min-width: $desktop-breakpoint) {
     margin: 0;
     padding-left: $s-size;
   }
+  word-break: break-all;
+}
+
+.list-item__date {
+  color: $grey;
+  font-size: $font-size-small;
 }
