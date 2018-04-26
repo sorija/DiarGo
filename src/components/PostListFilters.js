@@ -22,7 +22,7 @@ export class PostListFilters extends React.Component {
 
       <div className="page-header">
       <div className="content-container">
-        <div className="input-group">
+        <div className="input-group search-inputs">
           <div className="input-group__item">
             <input
               className="text-input"
